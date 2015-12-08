@@ -11,7 +11,6 @@
 
 	var slides = document.getElementsByClassName("slide");
 	var active = 0;
-	var keys = [];
 
 	function switchTo(index)
 	{
@@ -36,6 +35,7 @@
 	}
 
 	slides[0].classList.add("active");
+	toggle();
 
 	addEventListener("keypress", function(event)
 	{
@@ -56,10 +56,39 @@
 
 	addEventListener("click", function(event)
 	{
-		[Nothing, Nothing, Nothing, prev, next][event.button]();
+		var isAnchor = function()
+		{
+			for (var node = event.target; node; node = node.parentElement)
+				if (node instanceof HTMLAnchorElement)
+					return true;
+			return false;
+		}();
+
+		var isInteractive = isAnchor || [
+			HTMLEmbedElement,
+			HTMLObjectElement,
+			HTMLMediaElement,
+			SVGSVGElement,
+			HTMLCanvasElement,
+			HTMLInputElement,
+			HTMLTextAreaElement,
+			HTMLSelectElement,
+			HTMLOptionElement,
+		].some(function(constructor)
+		{
+			return event.target instanceof constructor;
+		});
+
+		var handler = isInteractive ? Nothing : event.shiftKey ? prev : next;
+
+		[handler, Nothing, Nothing, prev, next][event.button]();
 	});
 
-	document.getElementById("prev").addEventListener("click", prev);
-	document.getElementById("next").addEventListener("click", next);
-	document.getElementById("toggle").addEventListener("click", toggle);
+	addEventListener("wheel", function(event)
+	{
+		if (event.deltaMode)
+			[next, prev][event.deltaX + event.deltaY < 0]();
+		else
+			console.log(event.deltaX + event.deltaY);
+	});
 })();
