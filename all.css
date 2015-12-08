@@ -1,0 +1,40 @@
+/* Generic settings */
+body {
+	color: #111;
+	font-family: Roboto, sans-serif;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+h1, h2 {
+	font: 1.6rem "Roboto Condensed", sans-serif;
+}
+a {
+	color: #111;
+	text-decoration: none;
+}
+dt {
+	font-weight: bold;
+}
+
+/* Header */
+.authors {
+	list-style: none;
+}
+.authors > li {
+	display: inline;
+	margin-right: 0.2ex;
+	white-space: nowrap;
+}
+.authors > li:after {
+	content: ",";
+}
+.authors > li:last-child:after {
+	content: none;
+}
+
+.logo {
+	float: right;
+}

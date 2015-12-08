@@ -1,0 +1,69 @@
+/* Generic settings */
+body {
+	margin: 0 1em;
+}
+header, h2 {
+	background-color: #ffdf00;
+	padding: 1ex 1rem;
+	margin: 0 -1rem;
+}
+a {
+	text-decoration: underline;
+}
+a:hover {
+	opacity: 0.8;
+}
+
+/* Header */
+.logo {
+	float: right;
+	width: 20em;
+	margin-left: 1ex;
+}
+
+/* Interactivity */
+.playing > .slide {
+	display: none;
+}
+.playing > .active {
+	display: block;
+	position: fixed;
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+}
+
+.nav {
+	border: 0;
+	opacity: 0;
+	position: fixed;
+}
+.nav:hover {
+	opacity: 0.4;
+}
+#prev, #next {
+	top: 0;
+	bottom: 0;
+	width: 6em;
+}
+#prev {
+	left: 0;
+	background: linear-gradient(to right, black, transparent);
+}
+#next {
+	right: 0;
+	background: linear-gradient(to left, black, transparent);
+}
+#toggle {
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 6em;
+	background: linear-gradient(to bottom, black, transparent);
+}
