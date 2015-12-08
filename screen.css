@@ -67,3 +67,14 @@ a:hover {
 	height: 6em;
 	background: linear-gradient(to bottom, black, transparent);
 }
+
+/* Responsiveness */
+@media (max-width: 640px), (max-height: 480px) { html { font-size: 14px } }
+@media (max-width: 480px), (max-height: 360px) { html { font-size: 12px } }
+
+@media (min-width:  800px) and (min-height: 600px) { html { font-size: 20px } }
+@media (min-width:  960px) and (min-height: 720px) { html { font-size: 24px } }
+@media (min-width: 1120px) and (min-height: 840px) { html { font-size: 28px } }
+@media (min-width: 1280px) and (min-height: 960px) { html { font-size: 32px } }
+
+@media (orientation: portrait) { h1 { clear: right } }

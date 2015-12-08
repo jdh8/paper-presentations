@@ -1,4 +1,7 @@
 /* Generic settings */
+html {
+	font-size: 16px;
+}
 body {
 	color: #111;
 	font-family: Roboto, sans-serif;
@@ -37,4 +40,5 @@ dt {
 
 .logo {
 	float: right;
+	max-width: 100%;
 }
