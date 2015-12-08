@@ -36,7 +36,6 @@
 	}
 
 	slides[0].classList.add("active");
-	toggle();
 
 	addEventListener("keypress", function(event)
 	{
