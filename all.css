@@ -42,3 +42,33 @@ dt {
 	float: right;
 	max-width: 100%;
 }
+
+/* Structure */
+.blur {
+	color: #AAA;
+}
+.small {
+	font-size: 80%;
+}
+ol.A > li {
+	list-style: upper-alpha;
+}
+ul.small > li {
+	list-style: none;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+}
+thead {
+	border-top: thin solid;
+}
+thead, tbody, th {
+	border-bottom: thin solid;
+}
+th, td {
+	padding: 0 1ex;
+	text-align: left;
+	text-align: start;
+}
