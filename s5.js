@@ -49,7 +49,12 @@
 
 	addEventListener("wheel", function(event)
 	{
-		if (event.deltaMode)
-			(event.deltaX + event.deltaY < 0 ? prev : next)();
+		var delta = 0;
+
+		delta = ~~(event.deltaX + event.deltaY);
+		delta = event.deltaMode ? delta : delta >> 6;
+		delta = (delta > 0) - (delta < 0) |0;
+
+		[prev, noop, next, noop][delta + 1 & 3]();
 	});
 })();
