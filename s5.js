@@ -32,7 +32,7 @@
 	slides[0].classList.add("active");
 	toggle();
 
-	addEventListener("keypress", function(event)
+	addEventListener("keyup", function(event)
 	{
 		({
 			Escape: toggle,
